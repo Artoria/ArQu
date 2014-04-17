@@ -1,6 +1,7 @@
 class AppController < ArQu::Controller
   def initialize
-    @view = TestView.new
+    @h = Hero01.create
+    @view = HeroView.new(@h)
   end
 
   def run
@@ -8,6 +9,7 @@ class AppController < ArQu::Controller
      Graphics.update
      Input.update
      @view.update
+     @game.wave += 1 if Input.trigger? :C
     end
   end    
 end

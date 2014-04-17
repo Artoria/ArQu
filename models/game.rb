@@ -8,9 +8,11 @@ end
 
 class Battler < ArQu::Model
   Collection  :skills,    :Skill 
-  Collection  :states,    
-  Collection  :params,    
+  Collection  :states    
+  Collection  :params    
   Collection  :nowparams
+  Data        :name
+  Data        :description
 end
 
 class Hero < Battler
@@ -41,3 +43,8 @@ class Action < ArQu::Model
   Data :skill, :Skill
 end
 
+class Skill < ArQu::Model
+  Data :name
+  Data :description
+  Data :skillproc
+end
